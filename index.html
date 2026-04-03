@@ -19,17 +19,14 @@ nav{background:#1c3557;padding:0 48px;display:flex;align-items:center;justify-co
 .hero-inner{max-width:900px;margin:0 auto}
 .hero-kicker{font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:#d4a843;margin-bottom:18px;font-weight:500}
 .hero h1{font-family:'EB Garamond',serif;font-size:52px;font-weight:500;line-height:1.2;margin-bottom:10px;color:#fff;white-space:nowrap}
-.hero-byline{font-size:16px;color:rgba(255,255,255,0.45);font-style:italic;font-family:'EB Garamond',serif;margin-bottom:34px}
 .hero-meta{display:flex;align-items:center;gap:36px;flex-wrap:wrap;margin-bottom:36px}
 .meta-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:3px}
 .meta-val{font-family:'EB Garamond',serif;font-size:23px;color:#fff}
 .meta-sep{width:1px;height:34px;background:rgba(255,255,255,0.15)}
 .hero-divider{height:0.5px;background:rgba(255,255,255,0.12);margin-bottom:28px}
-
-.countdown-wrap{margin-bottom:32px}
+.countdown-wrap{margin-bottom:36px}
 .countdown-days{font-family:'EB Garamond',serif;font-size:64px;color:#d4a843;line-height:1;margin-bottom:4px}
 .countdown-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.35)}
-
 .organizers-row{display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap}
 .org-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-top:3px;white-space:nowrap}
 .org-names{display:flex;gap:28px;flex-wrap:wrap}
@@ -98,7 +95,6 @@ nav{background:#1c3557;padding:0 48px;display:flex;align-items:center;justify-co
   <div class="hero-inner">
     <div class="hero-kicker">3rd Edition · Annual Workshop</div>
     <h1>Development Economics Workshop</h1>
-    <div class="hero-byline">Hosted by GATE Lyon Saint-Étienne · Saint-Étienne, France</div>
     <div class="hero-meta">
       <div><div class="meta-label">Dates</div><div class="meta-val">July 9–10, 2026</div></div>
       <div class="meta-sep"></div>
@@ -106,12 +102,10 @@ nav{background:#1c3557;padding:0 48px;display:flex;align-items:center;justify-co
       <div class="meta-sep"></div>
       <div><div class="meta-label">Submission deadline</div><div class="meta-val">May 15, 2026</div></div>
     </div>
-
     <div class="countdown-wrap">
       <div class="countdown-days" id="countdown-days">—</div>
       <div class="countdown-label">Days until the workshop</div>
     </div>
-
     <div class="hero-divider"></div>
     <div class="organizers-row">
       <div class="org-label">Organizers</div>
@@ -137,7 +131,7 @@ nav{background:#1c3557;padding:0 48px;display:flex;align-items:center;justify-co
 
   <div class="section">
     <div class="sec-label">About the Workshop</div>
-    <h2 class="sec-h2">An annual forum for development economics research</h2>
+    <h2 class="sec-h2">An annual workshop for development economics research</h2>
     <div class="two-col">
       <div class="body-text">
         <p>The 3rd edition of the Development Economics Workshop will take place on July 9–10, 2026 in Saint-Étienne, France. This workshop combines poster sessions and oral presentations, fostering exchanges between senior and junior researchers in development economics.</p>
@@ -181,6 +175,11 @@ nav{background:#1c3557;padding:0 48px;display:flex;align-items:center;justify-co
         <div class="sp-name">Joseph-Simon Görlach</div>
         <div class="sp-dot">·</div>
         <div class="sp-inst">Bocconi University</div>
+      </div>
+      <div class="speaker-row">
+        <div class="sp-name">Florian Grosset-Touba</div>
+        <div class="sp-dot">·</div>
+        <div class="sp-inst">CREST, ENSAE</div>
       </div>
       <div class="speaker-row">
         <div class="sp-name">Mohamed Saleh</div>
@@ -230,15 +229,14 @@ nav{background:#1c3557;padding:0 48px;display:flex;align-items:center;justify-co
 </div>
 
 <script>
-function updateCountdown() {
-  const workshop = new Date('2026-07-09T09:00:00');
-  const now = new Date();
-  const diff = workshop - now;
-  const days = Math.max(0, Math.floor(diff / 86400000));
-  document.getElementById('countdown-days').textContent = days;
+function updateCountdown(){
+  const workshop=new Date('2026-07-09T09:00:00');
+  const now=new Date();
+  const days=Math.max(0,Math.floor((workshop-now)/86400000));
+  document.getElementById('countdown-days').textContent=days;
 }
 updateCountdown();
-setInterval(updateCountdown, 60000);
+setInterval(updateCountdown,60000);
 </script>
 
 </body>
